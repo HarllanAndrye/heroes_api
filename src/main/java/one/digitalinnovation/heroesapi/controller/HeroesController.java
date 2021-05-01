@@ -66,13 +66,13 @@ public class HeroesController {
 	}
 
 	@DeleteMapping(HEROES_ENDPOINT_LOCAL + "/{id}")
-	public Mono<HttpStatus> deletebyIDHero(@PathVariable String id) {
+	public Mono<ResponseEntity<Void>> deletebyIDHero(@PathVariable String id) {
 		Mono<Boolean> deleted = heroesService.deletebyIDHero(id);
 		if (deleted.block()) {
 			log.info("Deleting the hero with id {}", id);
-			return Mono.just(HttpStatus.OK);
+			return Mono.just(new ResponseEntity<Void>(HttpStatus.OK));
 		} else {
-			return Mono.just(HttpStatus.NOT_FOUND);
+			return Mono.just(new ResponseEntity<Void>(HttpStatus.NOT_FOUND));
 		}
 	}
 	
