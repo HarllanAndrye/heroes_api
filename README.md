@@ -28,7 +28,7 @@ Stack utilizada no projeto:
 - Reactor;
 - [MongoDB](https://www.mongodb.com) (banco de dados não relacional);
 - JUnit (ferramenta para testes unitários);
-- Sweagger;
+- Swagger;
 - Postman.
 
 ### :computer: Rodar a aplicação
